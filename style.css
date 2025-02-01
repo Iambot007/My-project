@@ -1,0 +1,250 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  font-size: 20px;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 50px; /* Adjust logo size */
+    height: 50px; /* Adjust logo size */
+    margin-right: 0.5rem;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  /* Navigation Menu */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #ff6347; /* Change to your preferred hover color */
+  }
+  
+
+
+
+  /* Service Cards Container */
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  /* Individual Service Card */
+  .service-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Hover Effect */
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Card Content */
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  /* Animation Layer */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.5s ease;
+    z-index: 1;
+  }
+
+  .service-card:hover::before {
+    left: 100%;
+  }
+
+  /* Icon Styling (Optional) */
+  .service-card .icon {
+    font-size: 2.5rem;
+    color: #ff6347;
+    margin-bottom: 1rem;
+  }
+
+
+
+   /* Footer */
+   footer {
+    background: #333;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  /* Footer Sections */
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ff6347; /* Accent color */
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #ff6347; /* Hover color */
+  }
+
+
+  /* Footer Bottom */
+  .footer-bottom {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+  }
+
+
+  .menu {
+    position: sticky;
+    display: flex;
+    top: 0;
+}
+.menu-button {
+    padding: 9px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #333;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+}
+.menu-button:hover {
+  color: #ff6347;
+}
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #aff729;
+    border-radius: 5px;
+    display: none;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(92, 11, 11, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333333;
+}
+.dropdown a:hover {
+    background-color: #cbe949;
+}
+.menu:hover .dropdown,
+.menu.active .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
